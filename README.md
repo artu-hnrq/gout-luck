@@ -1,92 +1,34 @@
-# Conceptual Repository
-> This intends to be a [readme-documented][-0], [open-source-licensed][-1], [semantic-versioned][-2],
-[conventional-committed][-3] and [changelogged][-4] git repository starting point
-for the development of a brand-new project
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A straightforward beginning for an open-source project repository
+## Getting Started
 
-[-0]: https://www.makeareadme.com/ "Make a README"
-[-1]: https://choosealicense.com/licenses/ "Choose a License"
-[-2]: https://semver.org/ "Semantic Versioning"
-[-3]: https://www.conventionalcommits.org/en/v1.0.0/ "Conventional Commits"
-[-4]: https://keepachangelog.com/en/1.0.0/ "Keep a Changelog"
+First, run the development server:
 
-[>0]: https://github.com/RichardLitt/standard-readme/blob/master/spec.md "Standard readme specification"
-[>1]: https://www.repostatus.org "Repo maintenance status"
-[>2]: https://choosealicense.com/licenses/gpl-3.0/ "GPL 3.0 License description"
-
-[!0]: https://github.com/generic-tree/root/generate "Github repository's template generation URL"
-
-[B0]: https://img.shields.io/static/v1?label=create%20a%20new%20repository&message=%20&style=social "Create new repository"
-[B1]: https://www.repostatus.org/badges/latest/concept.svg "Repostatus active badge"
-[B2]: https://img.shields.io/github/license/generic-tree/root?color=green "License badge"
-
-### Table of Contents
-<details>
-  <summary>See all</summary>
-
-  * [Getting started](#getting-started)
-    * [Development environment](#development-environment)
-    * [Repo publication](#repo-publication)
-  * [Project specifications](#project-specifications)
-    * [Features](#features)
-    * [Folder structure](#folder-structure)
-  * [Maintenance](#maintenance-)
-  * [License](#license-)
-
-</details>
-
-
-## Getting started
-First of all, [![create a new repository][B0]][!0] from this template, \
-Name it accordingly and place where it best fits for your team.
-
-### Development environment
-Make sure you have `Git` installed:
 ```bash
-$ git --version
-git version 2.25.1
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-Thus, clone the recent-created repository locally,
-and you'll be ready to start developing your project.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Repo publication
-After all, you should make this project your own. \
-Write a good README to present it to the world. \
-And also ensure to tailor the project license to your needs,
-as well as assign a suitable maintenance status.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Project specifications
-Here some descriptions about this template project:
+## Learn More
 
-### Features
-This project shortens a repository start setup, considering:
-* Inclusion of a mature README document, inspired by [Standard Readme][>0]
-* Inclusion of an open-source LICENSE file
-* Inclusion of a structured, yet raw, CHANGELOG file
-* Compliance with widely-used version control conventions, such as:
-    * [Semantic Versioning][-2]
-    * [Conventional Commit][-3]
-    * [Keep a Changelog][-4]
+To learn more about Next.js, take a look at the following resources:
 
-### Folder structure
-```
-.
-├── .git/                       Version control system folder
-├── .gitignore                  VCS ignored files manifest
-├── CHANGELOG.md                Release notes description
-├── LICENSE                     License file
-└── README.md                   Repo readme document
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Maintenance [![][B1]][>1]
-This project is maintained by the author, [@artu-hnrq](https://github.com/artu-hnrq). \
-Though, minimal or no implementation has been done yet,
-it's only intended to be a limited example, demo, or proof-of-concept.
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## License [![][B2]][>2]
-This project is published under the permissions established by [GNU General Public License v3.0][>2].
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
