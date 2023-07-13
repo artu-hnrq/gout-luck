@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className={"flex w-full items-start justify-center bg-green-200"}>
+          <div className="p-5">
+            <Image
+              src="/logo.webp"
+              alt="Logo"
+              // className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+              width={400}
+              height={50}
+              priority
+            />
+          </div>
+        </div>
+        {children}
+      </body>
     </html>
   )
 }
