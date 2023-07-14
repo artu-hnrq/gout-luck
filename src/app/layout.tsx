@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 
+import StoreProvider from '@/lib/store/provider'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -30,8 +32,10 @@ export default function RootLayout({
             />
           </div>
         </div>
-        {children}
+        <StoreProvider>
+          {children}
+        </StoreProvider>
       </body>
-    </html>
+    </html >
   )
 }

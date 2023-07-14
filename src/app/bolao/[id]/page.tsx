@@ -1,13 +1,19 @@
 import sdk from '@/lib/sdk'
 import { LotteryPanel, LotteryPanelProps } from '@/components/lottery/panel'
 
+import { ClientStoreLoader } from '@/components/lottery/clientStoreLoader'
+
+
 
 export default async function LotteryDetailPage({ params }: { params: { id: string } }) {
 
     const lottery = await getLottery(params.id)
 
     return (
-        <LotteryPanel lottery={lottery} />
+        <>
+            <ClientStoreLoader lottery={lottery} />
+            <LotteryPanel />
+        </>
     )
 }
 

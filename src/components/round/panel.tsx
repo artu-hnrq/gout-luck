@@ -34,9 +34,9 @@ export function RoundsPanel({ rounds, index, setIndex }: RoundsPanelProps) {
                             key={round.id}
                             round={round}
                             onCheckedChange={(value) => {
-                                setIndex(i + 1)
+                                setIndex(i)
                             }}
-                            selected={i < index}
+                            selected={i <= index}
                         />
                     })}
                 </div>

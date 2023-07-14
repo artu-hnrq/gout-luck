@@ -1,8 +1,12 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { Record, Ticket } from "@/lib/sdk/types"
-import { Badge } from "@/components/ui/badge"
+import { DrawnBadge } from "@/components/drawn/badge"
+
+import { useAppSelector } from '@/lib/store/hooks';
+import { selectCurrentDrawn } from './slice'
+import { Record, Ticket } from "@/lib/sdk/types";
+
 
 export const columns: ColumnDef<Record<Ticket>>[] = [
     {
@@ -11,30 +15,31 @@ export const columns: ColumnDef<Record<Ticket>>[] = [
     },
     {
         header: "Aposta",
-        accessorFn: row => row.fields.bets_str.split(','),
-        cell: info => (
-            <>
-                {
-                    info.getValue<string[]>().map((value, index) => {
-                        let color = 'bg-slate-500'
-
-                        if (value.includes('*')) {
-                            value = value.replace('*', '')
-                            color = 'bg-green-400'
-                        }
-
-                        return (
-                            <Badge key={index} className={`${color} rounded-2xl p-0.5 px-1 mx-0.5`}>
-                                {value}
-                            </Badge >
-                        )
-                    })
-                }
-            </>
-        )
+        accessorFn: row => row.fields.bets_str,
+        cell: function (info) {
+            const drawn = useAppSelector(selectCurrentDrawn);
+            return (
+                <div className="grid grid-flow-row grid-cols-10 gap-0.5 items-center justify-center w-fit">
+                    {
+                        info.getValue<string>()
+                            .split(', ')
+                            .sort((a, b) => Number(a) - Number(b))
+                            .map((bet, i) => {
+                                return (
+                                    <DrawnBadge key={i} highlighted={drawn.includes(bet)}>{bet}</DrawnBadge>
+                                )
+                            })
+                    }
+                </div>
+            )
+        }
     },
     {
         header: "Acertos",
-        accessorFn: row => row.fields.hit_count,
+        accessorFn: row => row.fields.bets_str,
+        cell: function (info) {
+            const drawn = useAppSelector(selectCurrentDrawn)
+            return info.getValue<string>().split(', ').filter((bet) => drawn.includes(bet)).length
+        }
     },
 ]
